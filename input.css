@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  background-image: url(../images/desktop/image-hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 84vh;
+}
+
+@media (max-width: 976px) {
+  header {
+    background-image: url(../images/desktop/image-hero.jpg);
+    height: 66vh;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    background-image: url(../images/mobile/image-hero.jpg);
+    height: 66vh;
+  }
+}
+
+.btn {
+  padding: 0.5rem 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid black;
+  letter-spacing: 3px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.navbar {
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transition: all 0.2s;
+}
+
+.navbar li {
+  margin-bottom: 2rem;
+}
+
+.navbar a {
+  font-weight: 300;
+}
+
+.background {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transition: all 0.4s ease-in-out;
+}
+
+.checkbox:checked ~ .background {
+  visibility: visible;
+  transform: scale(50);
+}
+
+.checkbox:checked ~ .navbar {
+  visibility: visible;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 1.5rem;
+  height: 3px;
+  background-color: white;
+  transition: all 0.4s ease-in-out;
+}
+
+.hamburger::before {
+  content: "";
+  transform: translateY(-9px);
+}
+.hamburger::after {
+  content: "";
+  transform: translateY(6px);
+}
+
+.checkbox:checked ~ .menu .hamburger {
+  transform: rotate(45deg);
+}
+
+.checkbox:checked ~ .menu .hamburger::before {
+  opacity: 0;
+}
+
+.checkbox:checked ~ .menu .hamburger::after {
+  opacity: 1;
+  transform: translateY(-3px) rotate(90deg);
+}
